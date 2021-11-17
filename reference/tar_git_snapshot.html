@@ -65,6 +65,7 @@
     </div>
 
     <div class="ref-usage sourceCode"><pre class="sourceCode r"><code><span class="fu">tar_git_snapshot</span><span class="op">(</span>
+  message <span class="op">=</span> <span class="cn">NULL</span>,
   ref <span class="op">=</span> <span class="st">"HEAD"</span>,
   code <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/getwd.html" class="external-link">getwd</a></span><span class="op">(</span><span class="op">)</span>,
   script <span class="op">=</span> <span class="fu">targets</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/targets/reference/tar_config_get.html" class="external-link">tar_config_get</a></span><span class="op">(</span><span class="st">"script"</span><span class="op">)</span>,
@@ -75,13 +76,18 @@
   callr_function <span class="op">=</span> <span class="fu">callr</span><span class="fu">::</span><span class="va"><a href="https://callr.r-lib.org/reference/r.html" class="external-link">r</a></span>,
   callr_arguments <span class="op">=</span> <span class="fu">targets</span><span class="fu">::</span><span class="fu"><a href="https://docs.ropensci.org/targets/reference/callr_args_default.html" class="external-link">callr_args_default</a></span><span class="op">(</span><span class="va">callr_function</span>, <span class="va">reporter</span><span class="op">)</span>,
   status <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/interactive.html" class="external-link">interactive</a></span><span class="op">(</span><span class="op">)</span>,
+  force <span class="op">=</span> <span class="cn">FALSE</span>,
   verbose <span class="op">=</span> <span class="cn">TRUE</span>
 <span class="op">)</span></code></pre></div>
 
     <div id="ref-sections">
     <div id="arguments">
     <h2>Arguments</h2>
-    <dl><dt>ref</dt>
+    <dl><dt>message</dt>
+<dd><p>Optional Git commit message of the data snapshot.
+If <code>NULL</code>, then the message is the Git commit message of the
+matching code commit.</p></dd>
+<dt>ref</dt>
 <dd><p>Character of length 1, reference
 (branch name, Git SHA1 hash, etc.) of the code commit
 that will map to the new data snapshot. Defaults to the commit
@@ -152,6 +158,9 @@ reproducible work.</p></dd>
 <dt>status</dt>
 <dd><p>Logical of length 1, whether to print the project status
 with <code><a href="tar_git_status.html">tar_git_status()</a></code> and ask whether a snapshot should be created.</p></dd>
+<dt>force</dt>
+<dd><p>Logical of length 1. Force checkout the data branch
+of an existing data snapshot of the current code commit?</p></dd>
 <dt>verbose</dt>
 <dd><p>Logical of length 1, whether to print R console messages
 confirming that a snapshot was created.</p></dd>
@@ -159,15 +168,12 @@ confirming that a snapshot was created.</p></dd>
     <div id="details">
     <h2>Details</h2>
     <p>A Git-backed <code>gittargets</code> data snapshot is a special kind of
-Git commit. Every data commit gets its own branch,
-and the branch name contains the Git SHA1 hash
-of the current code commit.
-In addition, a special <code>.gittargets</code> file gets written
-to the data store so you can create a new snapshot even when the
-data working tree is clean.
+Git commit. Every data commit is part of a branch specific to
+the current code commit.
 That way, when you switch branches or commits in the code,
-<code><a href="tar_git_checkout.html">tar_git_checkout()</a></code> can revert the data to match.
-Ideally, your targets should stay up to date even as you
+<code><a href="tar_git_checkout.html">tar_git_checkout()</a></code> checks out the latest data snapshot
+that matches the code in your workspace.
+That way, your targets can stay up to date even as you
 transition among multiple branches.</p>
     </div>
     <div id="stashing-gitignore">
