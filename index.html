@@ -155,12 +155,12 @@
 <div class="section level2">
 <h2 id="alternatives">Alternatives<a class="anchor" aria-label="anchor" href="#alternatives"></a>
 </h2>
-<p>Newer versions of the <code>targets</code> package (&gt; 0.8.1) support continuous data versioning through <a href="http://aws.amazon.com" class="external-link">Amazon Web Services</a> for <a href="https://aws.amazon.com/s3/" class="external-link">S3 buckets</a> with <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html" class="external-link">versioning enabled</a>. In this approach, <code>targets</code> tracks the version ID of each cloud-enabled target. That way, when the metadata file reverts to a prior version, the pipeline automatically uses prior versions of targets that were up to date at the time the metadata was written. This approach has two distinct advantages over <code>gittargets</code>:</p>
+<p>Newer versions of the <code>targets</code> package (&gt; 0.8.1) support continuous data versioning through <a href="https://aws.amazon.com" class="external-link">Amazon Web Services</a> for <a href="https://aws.amazon.com/s3/" class="external-link">S3 buckets</a> with <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html" class="external-link">versioning enabled</a>. In this approach, <code>targets</code> tracks the version ID of each cloud-enabled target. That way, when the metadata file reverts to a prior version, the pipeline automatically uses prior versions of targets that were up to date at the time the metadata was written. This approach has two distinct advantages over <code>gittargets</code>:</p>
 <ol style="list-style-type: decimal">
 <li>Cloud storage reduces the burden of local storage for large data pipelines.</li>
 <li>Target data is uploaded and tracked continuously, which means the user does not need to proactively take data snapshots.</li>
 </ol>
-<p>However, not all users have access to <a href="http://aws.amazon.com" class="external-link">AWS</a>, not everyone is able or willing to pay the monetary costs of cloud storage for every single version of every single target, and uploads and downloads to and from the cloud may bottleneck some pipelines. <code>gittargets</code> fills this niche with a data versioning system that is</p>
+<p>However, not all users have access to <a href="https://aws.amazon.com" class="external-link">AWS</a>, not everyone is able or willing to pay the monetary costs of cloud storage for every single version of every single target, and uploads and downloads to and from the cloud may bottleneck some pipelines. <code>gittargets</code> fills this niche with a data versioning system that is</p>
 <ol style="list-style-type: decimal">
 <li>Entirely local, and</li>
 <li>Entirely opt-in: users pick and choose when to register data snapshots, which consumes less storage than continuous snapshots or continuous cloud uploads to a versioned S3 bucket.</li>
