@@ -189,11 +189,11 @@
 <p>Then, we create our first data commit with <code><a href="../reference/tar_git_snapshot.html">tar_git_snapshot()</a></code>.<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tar_git_snapshot.html">tar_git_snapshot</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">#&gt; <span style="color: #0000BB;">•</span> Creating data branch code=d33eef45c6653efcd88f82ccb27dd7e9fb204642.</span>
+<pre><code><span class="co">#&gt; <span style="color: #0000BB;">•</span> Creating data branch code=711080966949891d26724cc331f456e9b48d012f.</span>
 <span class="co">#&gt; <span style="color: #0000BB;">•</span> Staging data files.</span>
 <span class="co">#&gt; <span style="color: #00BB00;">✔</span> Staged 6 files in the data store.</span>
 <span class="co">#&gt; <span style="color: #0000BB;">•</span> Committing data changes.</span>
-<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Created new data snapshot a37a9f4bcaf88155d6008859f84c1f976dd363d6.</span></code></pre>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Created new data snapshot 2336fadab6a00d2057d6509041fb00cae2495d96.</span></code></pre>
 <div class="section level3">
 <h3 id="snapshot-model">Snapshot model<a class="anchor" aria-label="anchor" href="#snapshot-model"></a>
 </h3>
@@ -235,15 +235,15 @@
 <span class="co">#&gt; <span style="color: #BCBCBC;">1</span> _targets.R modified TRUE  </span>
 <span class="co">#&gt; <span style="color: #BCBCBC;">2</span> _targets/  new      FALSE</span>
 <span class="fu"><a href="https://docs.ropensci.org/gert/reference/git_commit.html" class="external-link">git_commit</a></span><span class="op">(</span><span class="st">"Switch to UKgas dataset"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "2bb830af6a3987469c8640471230965fd3cf8950"</span></code></pre></div>
+<span class="co">#&gt; [1] "dd1897fae08165f73ad80045d2a5ca576ecca358"</span></code></pre></div>
 <p>Finally, we create a data snapshot for the new code commit.</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tar_git_snapshot.html">tar_git_snapshot</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code><span class="co">#&gt; <span style="color: #0000BB;">•</span> Creating data branch code=2bb830af6a3987469c8640471230965fd3cf8950.</span>
+<pre><code><span class="co">#&gt; <span style="color: #0000BB;">•</span> Creating data branch code=dd1897fae08165f73ad80045d2a5ca576ecca358.</span>
 <span class="co">#&gt; <span style="color: #0000BB;">•</span> Staging data files.</span>
 <span class="co">#&gt; <span style="color: #00BB00;">✔</span> Staged 5 files in the data store.</span>
 <span class="co">#&gt; <span style="color: #0000BB;">•</span> Committing data changes.</span>
-<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Created new data snapshot a418d9aad727f23bbd0740e4924b1fa71fe60481.</span></code></pre>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Created new data snapshot 3680017d7165f4af681a77809deccc2a7c2e76be.</span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="view-log">View log<a class="anchor" aria-label="anchor" href="#view-log"></a>
@@ -254,8 +254,8 @@
 <span class="co">#&gt; <span style="color: #949494;"># A tibble: 2 × 5</span></span>
 <span class="co">#&gt;   message_code  time_code           time_data           commit_code  commit_data</span>
 <span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Switch to UK… 2021-12-14 <span style="color: #949494;">13:04:23</span> 2021-12-14 <span style="color: #949494;">13:04:24</span> 2bb830af6a3… a418d9aad7…</span>
-<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Begin analyz… 2021-12-14 <span style="color: #949494;">13:04:20</span> 2021-12-14 <span style="color: #949494;">13:04:22</span> d33eef45c66… a37a9f4bca…</span></code></pre></div>
+<span class="co">#&gt; <span style="color: #BCBCBC;">1</span> Begin analyz… 2021-12-14 <span style="color: #949494;">15:45:13</span> 2021-12-14 <span style="color: #949494;">15:45:15</span> 71108096694… 2336fadab6…</span>
+<span class="co">#&gt; <span style="color: #BCBCBC;">2</span> Switch to UK… 2021-12-14 <span style="color: #949494;">15:45:16</span> 2021-12-14 <span style="color: #949494;">15:45:17</span> dd1897fae08… 3680017d71…</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="check-out-code">Check out code<a class="anchor" aria-label="anchor" href="#check-out-code"></a>
@@ -279,8 +279,8 @@
 <p>To bring our targets back up to date with the <code>airquality</code> data, instead of beginning a potentially long computation with <code><a href="https://docs.ropensci.org/targets/reference/tar_make.html" class="external-link">tar_make()</a></code>, we can check out the data snapshot that matches our current code commit.</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/tar_git_checkout.html">tar_git_checkout</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Checked out data snapshot a37a9f4bcaf88155d6008859f84c1f976dd363d6.</span>
-<span class="co">#&gt; <span style="color: #0000BB;">•</span> Code commit: code=d33eef45c6653efcd88f82ccb27dd7e9fb204642</span>
+<span class="co">#&gt; <span style="color: #00BB00;">✔</span> Checked out data snapshot 2336fadab6a00d2057d6509041fb00cae2495d96.</span>
+<span class="co">#&gt; <span style="color: #0000BB;">•</span> Code commit: code=711080966949891d26724cc331f456e9b48d012f</span>
 <span class="co">#&gt; <span style="color: #0000BB;">•</span> Message: Begin analyzing the airquality dataset</span></code></pre></div>
 <p>Now, our results reflect the <code>airquality</code> dataset we previously analyzed.</p>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
