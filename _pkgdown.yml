@@ -1,0 +1,33 @@
+destination: docs/
+navbar:
+  title: gittargets
+  type: default
+  left:
+  - icon: fa-home fa-lg
+    href: index.html
+  - text: Functions
+    href: reference/index.html
+  - text: targets
+    href: https://docs.ropensci.org/targets
+  - text: Vignettes
+    href: articles/index.html
+  - text: News
+    href: news/index.html
+  right:
+  - icon: fa-github fa-lg
+    href: https://github.com/wlandau/gittargets
+reference:
+- title: Help
+  contents:
+  - '`gittargets-package`'
+- title: Git data backend
+  contents:
+  - '`tar_git_checkout`'
+  - '`tar_git_init`'
+  - '`tar_git_log`'
+  - '`tar_git_ok`'
+  - '`tar_git_snapshot`'
+  - '`tar_git_status`'
+  - '`tar_git_status_code`'
+  - '`tar_git_status_data`'
+  - '`tar_git_status_targets`'
